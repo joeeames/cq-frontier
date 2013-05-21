@@ -8,10 +8,10 @@
 </head>
 <body>
 <div class="container">
-    <div class="navbar" ng-controller="MainMenuController">
+    <div class="navbar" ng-controller="MainMenuCtrl">
         <div class="navbar-inner">
             <ul class="nav">
-                <li><a href="/events">Events</a></li>
+                <li><a href="/home">Home</a></li>
                 <li><a href="/events/new">Create Event</a></li>
             </ul>
             <ul class="nav pull-right" ng-hide="isAuthenticated()">
@@ -20,7 +20,7 @@
             </ul>
             <ul class="nav pull-right" ng-show="isAuthenticated()">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{user.name}}</a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">bobby{{user.name}}</a>
                     <ul class="dropdown-menu">
                         <li><a href="/editProfile">Edit Profile</a></li>
                         <li><a href="#" ng-click="logout()">Logout</a></li>
@@ -29,19 +29,18 @@
             </ul>
         </div>
     </div>
-    <div ng-view style="padding-left:20px; padding-right:20px"></div>
+    <div ng-view class="main-content"></div>
 </div>
 
-<script src="/js/jquery.min.js"></script>
+<script src="/lib/jquery.min.js"></script>
 <script src="/lib/angular/angular.js"></script>
 <script src="/lib/angular/angular-resource.min.js"></script>
 <script src="/lib/underscore-1.4.4.min.js"></script>
 <script src="/js/app.js"></script>
-<script src="/js/services.js"></script>
-<script src="/js/controllers.js"></script>
-<script src="/js/filters.js"></script>
-<script src="/js/directives.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<script src="/js/Controllers/HomeCtrl.js"></script>
+<script src="/js/controllers/mainMenuCtrl.js"></script>
+<script src="/js/Controllers/NewTownCtrl.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
 
 </body>
 </html>

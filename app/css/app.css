@@ -11,3 +11,7 @@ select, textarea {
   margin-top: 0px;
 }
 
+.main-content {
+  padding-left:20px;
+  padding-right:20px
+}
