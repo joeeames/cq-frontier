@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="1B60DF9F-F211-498E-AF7F-A60B46489984" ModuleId="CQ.Frontier.Web" />
+  <Module PersistentId="3468E35D-8C9E-4909-A637-0F4F37C272CE" ModuleId="CQ.Frontier.Test" />
+</Modules>

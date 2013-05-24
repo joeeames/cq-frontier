@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQ.Frontier.Web", "CQ.Frontier.Web\CQ.Frontier.Web.csproj", "{1B60DF9F-F211-498E-AF7F-A60B46489984}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQ.Frontier.Test", "CQ.Frontier.Test\CQ.Frontier.Test.csproj", "{3468E35D-8C9E-4909-A637-0F4F37C272CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B60DF9F-F211-498E-AF7F-A60B46489984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B60DF9F-F211-498E-AF7F-A60B46489984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B60DF9F-F211-498E-AF7F-A60B46489984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B60DF9F-F211-498E-AF7F-A60B46489984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3468E35D-8C9E-4909-A637-0F4F37C272CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3468E35D-8C9E-4909-A637-0F4F37C272CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3468E35D-8C9E-4909-A637-0F4F37C272CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3468E35D-8C9E-4909-A637-0F4F37C272CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
