@@ -123,9 +123,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Api\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -138,22 +138,28 @@
     <Compile Include="Repo\UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\css\app.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\img\bg\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\img\bg\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\img\bg\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\img\bg\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\img\bg\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\img\bg\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\img\bg\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\img\bg\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\img\sprites\glyphicons-halflings-white.png" />
+    <Content Include="Content\img\sprites\glyphicons-halflings.png" />
+    <Content Include="Content\img\sprites\ui-icons_222222_256x240.png" />
+    <Content Include="Content\img\sprites\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\img\sprites\ui-icons_454545_256x240.png" />
+    <Content Include="Content\img\sprites\ui-icons_888888_256x240.png" />
+    <Content Include="Content\img\sprites\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\js\vendor\bootstrap\bootstrap.js" />
+    <Content Include="Content\js\vendor\bootstrap\bootstrap.min.js" />
+    <Content Include="Content\js\vendor\jquery\jquery-2.0.1.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -161,26 +167,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\aspNetHome.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\facebook.png" />
-    <Content Include="Images\findHosting.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\NuGetGallery.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
-    <Content Include="Images\twitter.png" />
-    <Content Include="Images\windowsLive.png" />
-    <Content Include="Scripts\_references.js" />
+    <Content Include="Content\js\vendor\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -199,6 +186,9 @@
       <LastGenOutput>froniter.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\App\Index.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -215,7 +205,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61053</DevelopmentServerPort>
+          <DevelopmentServerPort>62957</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
