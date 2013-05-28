@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace CQ.Frontier.Web.Controllers
 {
@@ -16,11 +17,25 @@ namespace CQ.Frontier.Web.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Register()
         {
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Register(Models.UserModel user)
+        {
+            if (ModelState.IsValid)
+            {
+                Repo.UserRepo userRepo = new Repo.UserRepo();
+                userRepo.CreateUser(user.username,user.passwordhash);
+
+                return RedirectToAction("Index", "Appcontroller");
+            }
+            return View(user);
+        }
+
         [HttpGet]
         public ActionResult Login()
         {
@@ -28,24 +43,44 @@ namespace CQ.Frontier.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login()
+        public ActionResult Login(Models.UserModel user)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                if (isValid(user.username, user.passwordhash))
+                {
+                    FormsAuthentication.SetAuthCookie(user.username, false);
+                    return RedirectToAction ("Index","Appcontroller");
+                }
+                else
+                {
+                    ModelState.AddModelError("","Login data is incorrect");
+                }
+            }
+            return View(user);
         }
-
-        [HttpGet]
+       
         public ActionResult Logout()
         {
-            return View();
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index","AppController");
         }
 
-        [HttpPost]
-        public ActionResult Logout()
+        private bool isValid(string username,string password)
         {
-            return View();
+            bool isValid = false;
+            Repo.UserRepo userRepo = new Repo.UserRepo();
+            var user = userRepo.GetUsers().FirstOrDefault(u => u.username == username);
+            if (user != null)
+            {
+                if (user.passwordhash == password)
+                {
+                    isValid = true;
+                }
+            }
+
+            return isValid;
         }
-
-
 
     }
 }

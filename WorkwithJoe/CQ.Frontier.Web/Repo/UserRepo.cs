@@ -9,22 +9,23 @@ namespace CQ.Frontier.Web.Repo
 	public class UserRepo
 	{
 		public Models.FrontiersEntities Entities;
-
+                
 		public System.Data.Objects.ObjectSet<Models.User> GetUsers()
 		{
 			Entities = new FrontiersEntities();
 			return Entities.Users;
 		}
 
-        public void CreateUser(string username,string salt,string password)
+        public void CreateUser(string username, string passwordhash)
         {
             Entities = new FrontiersEntities();
             User newUser = new User();
             newUser.username = username;
-            newUser.salt = salt;
-            newUser.passwordhash = password;
+            newUser.salt = "1";
+            newUser.passwordhash = passwordhash;
 
-            Entities.Users.add(newUser);
+            Entities.Users.AddObject(newUser);
+            Entities.SaveChanges();
             
         }
 

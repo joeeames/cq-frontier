@@ -7,6 +7,20 @@
     @Styles.Render("~/Content/themes/base/css", "~/Content/css")
 </head>
 <body>
+    <div>
+        @if (Request.IsAuthenticated)
+        { 
+            @Html.Encode(User.Identity.Name)
+            @Html.ActionLink("Log Out", "Logout", "User")
+        }
+        else
+        { 
+            @Html.ActionLink("Register","Register","User");
+            <span> | </span>
+            @Html.ActionLink("Log In","Login","User");
+        }
+    </div>
+
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")

@@ -1,6 +1,24 @@
-﻿@{
+﻿@model CQ.Frontier.Web.Models.UserModel
+@{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Login</h2>
+@using (Html.BeginForm())
+{ 
+    @Html.ValidationSummary(true,"Login Failed, Please check or login details")
+    <div>
+        <fieldset>
+            <legend>Login Form</legend>
+            <div>@Html.LabelFor(x=>x.username)</div>
+            <div>@Html.TextBoxFor(x=>x.username)  @Html.ValidationMessageFor(x => x.username)</div>
+
+            <div>@Html.LabelFor(x=>x.passwordhash)</div>
+            <div>@Html.PasswordFor(x => x.passwordhash)  @Html.ValidationMessageFor(x => x.passwordhash)</div>
+
+            <input type="submit" value="Log In" />
+
+        </fieldset>
+    </div>
+    
+}

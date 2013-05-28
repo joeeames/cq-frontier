@@ -1,6 +1,25 @@
-﻿@{
+﻿@model CQ.Frontier.Web.Models.UserModel
+
+@{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Register</h2>
+@using (Html.BeginForm())
+{ 
+    <div>
+        <fieldset>
+            <legend>Registration Form</legend>
+            <div>@Html.LabelFor(x=>x.username)</div>
+            <div>@Html.TextBoxFor(x=>x.username)  @Html.ValidationMessageFor(x => x.username)</div>
+
+            <div>@Html.LabelFor(x=>x.passwordhash)</div>
+            <div>@Html.PasswordFor(x => x.passwordhash)  @Html.ValidationMessageFor(x => x.passwordhash)</div>
+
+            <input type="submit" value="Create User" />
+
+        </fieldset>
+    </div>
+    
+}
+

@@ -11,11 +11,13 @@ namespace CQ.Frontier.Web.Models
         [Required]
         [DataType(DataType.EmailAddress)]
         [StringLength(100)]
+        [Display(Name = "Email Address")]
         public string username { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [StringLength(100,MinimumLength=6)]
+        [StringLength(100,MinimumLength=1)]
+        [Display(Name="Password")]
         public string passwordhash { get; set; }
 
     }
