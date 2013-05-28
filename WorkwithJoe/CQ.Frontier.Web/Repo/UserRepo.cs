@@ -16,5 +16,17 @@ namespace CQ.Frontier.Web.Repo
 			return Entities.Users;
 		}
 
+        public void CreateUser(string username,string salt,string password)
+        {
+            Entities = new FrontiersEntities();
+            User newUser = new User();
+            newUser.username = username;
+            newUser.salt = salt;
+            newUser.passwordhash = password;
+
+            Entities.Users.add(newUser);
+            
+        }
+
 	}
 }

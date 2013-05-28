@@ -16,5 +16,36 @@ namespace CQ.Frontier.Web.Controllers
             return View();
         }
 
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            return View();
+        }
+
+
+
     }
 }
