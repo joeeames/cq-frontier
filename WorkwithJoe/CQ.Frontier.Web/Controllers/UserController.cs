@@ -29,9 +29,10 @@ namespace CQ.Frontier.Web.Controllers
             if (ModelState.IsValid)
             {
                 Repo.UserRepo userRepo = new Repo.UserRepo();
+
                 userRepo.CreateUser(user.username,user.passwordhash);
 
-                return RedirectToAction("Index", "Appcontroller");
+                return RedirectToAction("Login", "User");
             }
             return View(user);
         }
@@ -50,7 +51,7 @@ namespace CQ.Frontier.Web.Controllers
                 if (isValid(user.username, user.passwordhash))
                 {
                     FormsAuthentication.SetAuthCookie(user.username, false);
-                    return RedirectToAction ("Index","Appcontroller");
+                    return RedirectToAction ("Index","App");
                 }
                 else
                 {
@@ -70,15 +71,11 @@ namespace CQ.Frontier.Web.Controllers
         {
             bool isValid = false;
             Repo.UserRepo userRepo = new Repo.UserRepo();
-            var user = userRepo.GetUsers().FirstOrDefault(u => u.username == username);
+            var user = userRepo.GetUsers().FirstOrDefault(u => u.username == username && u.passwordhash == password);
             if (user != null)
             {
-                if (user.passwordhash == password)
-                {
-                    isValid = true;
-                }
+                isValid = true;
             }
-
             return isValid;
         }
 
