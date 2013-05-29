@@ -28,7 +28,7 @@ namespace CQ.Frontier.Web
 
 			routes.MapRoute(
 				name: "Default",
-				url: "{controller}",
+                url: "{controller}/{action}/{id}",
 				defaults: new { controller = "App", action = "Index", id = UrlParameter.Optional }
 			);
 		}
