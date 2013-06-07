@@ -5,6 +5,7 @@ a user can login
 a logged in user can edit his profile
 a logged in user can create a new frontier town
 a user can select a town to manage
+a logged in user cannot create a new town if he already has 5
 when a user checks on a town, it will have increasing income over time
 a user can see a list of buildings he owns in the town
 the list of buildings owned will have summary information shown

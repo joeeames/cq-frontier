@@ -12,7 +12,7 @@ namespace CQ.Frontier.Web.Controllers
         //
         // GET: /User/
 
-        public ActionResult Index()
+        public ActionResult Registration()
         {
             return View();
         }
