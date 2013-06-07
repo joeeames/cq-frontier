@@ -124,12 +124,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AppController.cs" />
-<<<<<<< HEAD
-    <Compile Include="Api\UsersApiController.cs" />
-=======
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Api\UsersController.cs" />
->>>>>>> working on cq
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -195,7 +190,6 @@
     <Content Include="Views\App\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Content Include="Views\User\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -203,11 +197,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\User\Logout.cshtml" />
-=======
-    <Content Include="Views\User\Logout.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
     <Content Include="Views\User\Signin.cshtml" />
->>>>>>> working on cq
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
